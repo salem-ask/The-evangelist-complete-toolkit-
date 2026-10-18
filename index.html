@@ -47,9 +47,6 @@
   --btn-hi: rgba(255, 255, 255, .55);
   --btn-glow: rgba(214, 161, 58, .55);
   --badge-ink: #ffffff;
-  --wa: #25d366;
-  --wa-ink: #052e16;
-  --wa-disc: #ffffff;
 
   /* Light theme */
   --bg: #ffffff;
@@ -59,7 +56,6 @@
   --ink: #0b1630;
   --ink-soft: #4a5571;
   --line: #e5dccb;
-  --line-strong: #c9b995;
   --accent-ink: #8a5a0b;
   --band: #0a1730;
   --band-deep: #060f22;
@@ -73,7 +69,6 @@
   --glow-blue: rgba(46, 88, 160, .38);
   --shadow-card: 0 1px 2px rgba(10, 23, 48, .06), 0 16px 36px -20px rgba(10, 23, 48, .3);
   --shadow-poster: 0 34px 60px -28px rgba(0, 0, 0, .75);
-  --shadow-float: 0 12px 30px -10px rgba(5, 12, 27, .55);
   --focus: #0a1730;
 
   /* Type */
@@ -98,7 +93,6 @@
     --ink: #edf1f8;
     --ink-soft: #b2bccf;
     --line: #22355a;
-    --line-strong: #3d537d;
     --accent-ink: #ecc96a;
     --band: #0c1b38;
     --band-deep: #050b17;
@@ -118,7 +112,6 @@
   --ink: #edf1f8;
   --ink-soft: #b2bccf;
   --line: #22355a;
-  --line-strong: #3d537d;
   --accent-ink: #ecc96a;
   --band: #0c1b38;
   --band-deep: #050b17;
@@ -488,29 +481,7 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
 .offer-price { font: 800 clamp(2rem, 1.6rem + 2vw, 2.75rem)/1.1 var(--font-display); color: var(--on-band-gold); }
 .offer-note { font-size: .9375rem; color: var(--on-band-soft); max-width: 30rem; }
 
-/* ---------- 8. Testimonials ---------- */
-.testimonials { list-style: none; padding: 0; display: grid; gap: 16px; }
-@media (min-width: 860px) { .testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; } }
-.testimonial figure {
-  height: 100%;
-  display: grid; align-content: start; gap: 14px;
-  padding: 24px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  box-shadow: var(--shadow-card);
-}
-.testimonial__mark { height: 28px; font: 700 3.5rem/1 var(--font-scripture); color: var(--accent-ink); }
-.testimonial blockquote { font-size: 1.0625rem; }
-.testimonial figcaption { display: grid; gap: 2px; font-size: .9375rem; line-height: 1.4; color: var(--ink-soft); }
-.testimonial__name { font: 800 1rem/1.3 var(--font-display); color: var(--heading); }
-.testimonial.is-empty figure { border: 2px dashed var(--line-strong); background: transparent; box-shadow: none; }
-.testimonial.is-empty blockquote,
-.testimonial.is-empty .testimonial__name { color: var(--ink-soft); font-style: italic; }
-.testimonials-invite { margin-top: 28px; text-align: center; color: var(--ink-soft); }
-.testimonials-invite a { color: var(--accent-ink); font-weight: 700; }
-
-/* ---------- 9. FAQ ---------- */
+/* ---------- 8. FAQ ---------- */
 .faq { display: grid; gap: 12px; max-width: 48rem; }
 .faq details {
   border: 1px solid var(--line);
@@ -542,7 +513,7 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
 .faq__answer { padding: 0 20px 20px; color: var(--ink-soft); }
 .faq__answer a { color: var(--accent-ink); font-weight: 700; }
 
-/* ---------- 10. Final call ---------- */
+/* ---------- 9. Final call ---------- */
 .final__inner { display: grid; justify-items: center; gap: 20px; max-width: 46rem; text-align: center; }
 .verse { display: grid; gap: 10px; }
 .verse blockquote { font: italic 400 clamp(1.2rem, 1rem + .9vw, 1.55rem)/1.45 var(--font-scripture); color: var(--on-band-gold); }
@@ -554,52 +525,20 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
 }
 .final .cta-block { width: 100%; margin-top: 8px; }
 
-/* ---------- 11. Footer ---------- */
+/* ---------- 10. Footer ---------- */
 .footer {
   background: var(--band-deep);
   color: var(--on-band-soft);
   --focus: var(--on-band-gold);
-  padding-block: 40px calc(104px + env(safe-area-inset-bottom, 0px));
+  padding-block: 40px calc(40px + env(safe-area-inset-bottom, 0px));
   font-size: .9375rem;
 }
 .footer__inner { display: grid; justify-items: center; gap: 12px; text-align: center; }
 .footer__brand { font: 800 1.0625rem/1.3 var(--font-display); color: var(--on-band); }
 .footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 24px; }
-.footer__links a { display: inline-block; padding: 10px 2px; color: var(--on-band-gold); text-underline-offset: 3px; }
-
-/* ---------- Floating WhatsApp button ---------- */
-.wa-float {
-  position: fixed;
-  z-index: 40;
-  right: calc(12px + env(safe-area-inset-right, 0px));
-  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  display: flex; align-items: center; gap: 10px;
-  max-width: calc(100vw - 24px);
-  min-height: 56px;
-  padding: 7px 18px 7px 7px;
-  border-radius: 999px;
-  background: var(--wa);
-  color: var(--wa-ink);
-  text-decoration: none;
-  box-shadow: var(--shadow-float);
-  line-height: 1.15;
-  -webkit-tap-highlight-color: transparent;
-  --focus: var(--navy);
-}
-.wa-float__disc {
-  width: 42px; height: 42px; flex: none;
-  display: grid; place-items: center;
-  border-radius: 50%;
-  background: var(--wa-disc);
-  color: var(--wa);
-}
-.wa-float__disc svg { width: 26px; height: 26px; fill: currentColor; }
-.wa-float__text { display: grid; gap: 2px; }
-.wa-float__q { font-size: .8125rem; font-weight: 600; }
-.wa-float__a { font: 800 .9375rem/1.15 var(--font-display); }
-@media (hover: hover) {
-  .wa-float:hover { filter: brightness(1.05); }
-}
+.footer__links a,
+.footer__site a { display: inline-block; padding: 10px 2px; color: var(--on-band-gold); text-underline-offset: 3px; }
+.footer__site a { font-weight: 700; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
@@ -925,54 +864,7 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
     </div>
   </section>
 
-  <!-- ============ 8. TESTIMONIALS ============ -->
-  <section class="section" id="testimonials" aria-labelledby="testimonials-title">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="testimonials-title">Testimonials</h2>
-        <p class="lead">What readers say about The Evangelist’s Complete Toolkit.</p>
-      </div>
-
-      <!-- HOW TO ADD A TESTIMONIAL: only use real testimonials, with the person's permission.
-           In a slot below, replace the text in [brackets], then remove " is-empty" from class="testimonial is-empty". -->
-      <ul class="testimonials" role="list">
-        <li class="testimonial is-empty">
-          <figure>
-            <span class="testimonial__mark" aria-hidden="true">“</span>
-            <blockquote><p>[Testimonial 1: the person’s own words]</p></blockquote>
-            <figcaption>
-              <span class="testimonial__name">[Name]</span>
-              <span>[Ministry role · City, Country]</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="testimonial is-empty">
-          <figure>
-            <span class="testimonial__mark" aria-hidden="true">“</span>
-            <blockquote><p>[Testimonial 2: the person’s own words]</p></blockquote>
-            <figcaption>
-              <span class="testimonial__name">[Name]</span>
-              <span>[Ministry role · City, Country]</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li class="testimonial is-empty">
-          <figure>
-            <span class="testimonial__mark" aria-hidden="true">“</span>
-            <blockquote><p>[Testimonial 3: the person’s own words]</p></blockquote>
-            <figcaption>
-              <span class="testimonial__name">[Name]</span>
-              <span>[Ministry role · City, Country]</span>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
-
-      <p class="testimonials-invite">Already using the toolkit? <a href="https://wa.me/243823226790?text=Hello%2C%20I%20would%20like%20information%20about%20The%20Evangelist%27s%20Complete%20Toolkit" target="_blank" rel="noopener">Send us your testimony on WhatsApp<span class="sr-only"> (opens in a new tab)</span></a></p>
-    </div>
-  </section>
-
-  <!-- ============ 9. FAQ ============ -->
+  <!-- ============ 8. FAQ ============ -->
   <section class="section section--alt" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
       <div class="section-head">
@@ -1007,14 +899,14 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
         <details>
           <summary>How do I contact support?<span class="faq__toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"></use></svg></span></summary>
           <div class="faq__answer">
-            <p>Send us a message on WhatsApp with the green button at the bottom of the screen, or <a href="https://wa.me/243823226790?text=Hello%2C%20I%20would%20like%20information%20about%20The%20Evangelist%27s%20Complete%20Toolkit" target="_blank" rel="noopener">message us on WhatsApp here<span class="sr-only"> (opens in a new tab)</span></a>. We will be glad to help you.</p>
+            <p>Send us a message on WhatsApp at <a href="https://wa.me/243823226790?text=Hello%2C%20I%20would%20like%20information%20about%20The%20Evangelist%27s%20Complete%20Toolkit" target="_blank" rel="noopener">+243 823 226 790<span class="sr-only"> (opens in a new tab)</span></a>. We will be glad to help you.</p>
           </div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ============ 10. FINAL CALL TO ACTION ============ -->
+  <!-- ============ 9. FINAL CALL TO ACTION ============ -->
   <section class="section band final" id="get-started" aria-labelledby="final-title">
     <div class="wrap final__inner">
       <figure class="verse">
@@ -1041,7 +933,7 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
 
 </main>
 
-<!-- ============ 11. FOOTER ============ -->
+<!-- ============ 10. FOOTER ============ -->
 <footer class="footer">
   <div class="wrap footer__inner">
     <p class="footer__brand">The Evangelist’s Complete Toolkit</p>
@@ -1051,23 +943,12 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
       <a href="https://wa.me/243823226790?text=Hello%2C%20I%20would%20like%20information%20about%20The%20Evangelist%27s%20Complete%20Toolkit" target="_blank" rel="noopener">WhatsApp support<span class="sr-only"> (opens in a new tab)</span></a>
       <a href="#top">Back to top</a>
     </nav>
+    <p class="footer__site">Website: <a href="https://bookline.digital" target="_blank" rel="noopener">Bookline<span class="sr-only"> (opens in a new tab)</span></a></p>
     <p>© 2026 The Evangelist’s Complete Toolkit. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- Floating WhatsApp button (always visible) -->
-<aside aria-label="WhatsApp help">
-  <a class="wa-float" href="https://wa.me/243823226790?text=Hello%2C%20I%20would%20like%20information%20about%20The%20Evangelist%27s%20Complete%20Toolkit" target="_blank" rel="noopener">
-    <span class="wa-float__disc" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-whatsapp"></use></svg></span>
-    <span class="wa-float__text">
-      <span class="wa-float__q">Have a question?</span>
-      <span class="wa-float__a">Message us on WhatsApp</span>
-    </span>
-    <span class="sr-only">(opens in a new tab)</span>
-  </a>
-</aside>
-
-<!-- Icons: Lucide (ISC licence) and Simple Icons (CC0) -->
+<!-- Icons: Lucide (ISC licence) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
@@ -1086,7 +967,6 @@ h2 { font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.6rem); }
   <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
   <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></symbol>
   <symbol id="i-cross" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M6.5 8h11"/></symbol>
-  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
 </svg>
 
 </body>

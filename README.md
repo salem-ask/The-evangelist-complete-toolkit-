@@ -18,10 +18,9 @@ Examples: Hostinger File Manager (`public_html`), Netlify (drag and drop), or Gi
 
 ## What to edit in `index.html`
 
-- **Testimonials:** search for `HOW TO ADD A TESTIMONIAL`. Replace the text in `[brackets]` with a real testimonial (with the person’s permission), then remove ` is-empty` from that slot’s class.
 - **Price (optional):** search for `PRICE (optional)`. Write your price and delete the word `hidden`. If you leave it, the page tells visitors they will see the price on the checkout page.
 - **Link previews on WhatsApp and Facebook:** after the page is online, replace `images/share-image.jpg` in the `og:image` line with the full address, for example `https://your-domain.com/images/share-image.jpg`.
-- **Links:** the checkout link (`https://xzjdbavw.mychariow.co/prd_3tmqn68n/checkout`) and the WhatsApp link (`https://wa.me/243823226790?...`) each appear several times. Use search and replace if they change.
+- **Links:** the checkout link (`https://xzjdbavw.mychariow.co/prd_3tmqn68n/checkout`) appears several times, and the WhatsApp link (`https://wa.me/243823226790?...`) appears in the FAQ and the footer. Use search and replace if they change. The footer also links to the Bookline website (`https://bookline.digital`).
 
 ## Why it loads fast
 
@@ -32,5 +31,5 @@ Examples: Hostinger File Manager (`public_html`), Netlify (drag and drop), or Gi
 ## Credits
 
 - Heading font: [Montserrat](https://github.com/JulietaUla/Montserrat), SIL Open Font License 1.1 (`fonts/OFL.txt`)
-- Icons: [Lucide](https://lucide.dev) (ISC licence) and the WhatsApp glyph from [Simple Icons](https://simpleicons.org) (CC0)
+- Icons: [Lucide](https://lucide.dev) (ISC licence)
 - Scripture: Matthew 9:37 from the World English Bible (public domain)
