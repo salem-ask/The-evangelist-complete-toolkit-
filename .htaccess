@@ -1,5 +1,9 @@
 # Hostinger (LiteSpeed / Apache) settings for the sales page
 
+# Keep the Git folder and the README out of public view (the site is deployed with Git)
+RedirectMatch 404 /\.git
+RedirectMatch 404 /README\.md$
+
 # Serve the modern image and font formats with the right type
 AddType image/avif .avif
 AddType image/webp .webp
