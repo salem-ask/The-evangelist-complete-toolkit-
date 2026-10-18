@@ -11,16 +11,25 @@ It is plain HTML and CSS, with no JavaScript and no external libraries.
 | `images/` | Your posters, exported in AVIF, WebP and JPEG at several sizes, plus `share-image.jpg` for link previews |
 | `fonts/montserrat-800.woff2` | Heading font (Montserrat ExtraBold, Latin characters only), with its licence `OFL.txt` |
 | `.htaccess` | Hostinger server settings: file types, compression and caching |
+| `deploy/evangelist-toolkit-site.zip` | The site files above in one zip, used to deploy on Hostinger |
 
-## Put the page online
+## Where the page is online
 
-The page is set up for **https://evangelist-toolkit.bookline.digital** (Hostinger).
+**https://evangelist-toolkit.bookline.digital**, on Hostinger (account `u977986808`):
 
-1. In Hostinger hPanel, create the subdomain `evangelist-toolkit` for `bookline.digital`. Hostinger creates a folder for it (by default `public_html/evangelist-toolkit`).
-2. Open File Manager, go into that folder and upload `index.html`, `.htaccess`, and the `images` and `fonts` folders, keeping the same structure. You can also upload them as one zip file and use **Extract**.
-3. Check that SSL is active for the subdomain, then turn on **Force HTTPS**.
+- It is its own website on the hosting plan, separate from the Node.js app on `bookline.digital`, so the two cannot interfere.
+- DNS: an `A` record `evangelist-toolkit` → `92.113.24.54` in the `bookline.digital` zone.
+- SSL is active, and visitors are redirected to HTTPS.
 
-`.htaccess` gives the images and the font the right file types, compresses the page and lets phones keep images for 30 days. It only works on Apache/LiteSpeed servers such as Hostinger; on any other static host, upload the same files.
+`.htaccess` gives the images and the font the right file types, compresses the page, lets phones keep images for 30 days and hides Git files and this README. It only works on Apache/LiteSpeed servers such as Hostinger.
+
+## Update the live page
+
+1. Edit the files, then rebuild `deploy/evangelist-toolkit-site.zip` with `index.html`, `.htaccess`, `images/` and `fonts/` at the root of the zip, and push.
+2. In Hostinger, pull this repository into a temporary `_deploy` folder of the website (Git deployment).
+3. Deploy `_deploy/deploy/evangelist-toolkit-site.zip` as a static site archive. This replaces the website's files with the zip's contents and removes `_deploy`.
+
+By hand, you can instead upload the zip into the website's `public_html` with File Manager and use **Extract**, replacing the old files.
 
 ## What to edit in `index.html`
 
