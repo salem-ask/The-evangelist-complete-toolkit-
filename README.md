@@ -35,7 +35,7 @@ By hand, you can instead upload the zip into the website's `public_html` with Fi
 
 - **Price (optional):** search for `PRICE (optional)`. Write your price and delete the word `hidden`. If you leave it, the page tells visitors they will see the price on the checkout page.
 - **Page address:** if the page moves to another address, update `og:url`, `og:image` and the `canonical` link at the top of the file, so link previews on WhatsApp and Facebook keep working.
-- **Links:** the checkout link (`https://xzjdbavw.mychariow.co/prd_3tmqn68n/checkout`) appears several times, and the WhatsApp link (`https://wa.me/243823226790?...`) appears in the FAQ and the footer. Use search and replace if they change. The footer also links to the Bookline website (`https://bookline.digital`).
+- **Links:** the checkout link (`https://xzjdbavw.mychariow.co/prd_3tmqn68n/checkout`) appears several times, and the WhatsApp link (search for `wa.me`) is used by the FAQ button and the footer. The number itself is never shown on the page. Use search and replace if they change. The footer also links to the Bookline website (`https://bookline.digital`).
 
 ## Why it loads fast
 
